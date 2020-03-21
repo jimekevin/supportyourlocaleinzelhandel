@@ -9,6 +9,10 @@ import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 delete L.Icon.Default.prototype._getIconUrl;
 
+import 'onsenui/css/onsenui.css';
+import 'onsenui/css/onsen-css-components.css';
+import VueOnsen from 'vue-onsenui';
+
 L.Icon.Default.mergeOptions({
   iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
   iconUrl: require('leaflet/dist/images/marker-icon.png'),
@@ -18,6 +22,7 @@ L.Icon.Default.mergeOptions({
 Vue.component('l-map', LMap);
 Vue.component('l-tile-layer', LTileLayer);
 Vue.component('l-marker', LMarker);
+Vue.use(VueOnsen);
 Vue.use(VueRouter)
 // Vue.use(firestorePlugin)
 Vue.config.productionTip = false
