@@ -2,6 +2,9 @@
 <v-ons-page id="profile">
 <v-ons-toolbar>
   <div class="center">Produktkategorie</div>
+  <div class="right">
+    <router-link to="/city"><v-ons-toolbar-button icon="fa-close"></v-ons-toolbar-button></router-link>
+  </div>
 </v-ons-toolbar>
 
 <!--<v-ons-card>
