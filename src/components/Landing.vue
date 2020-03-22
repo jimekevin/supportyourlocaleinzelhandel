@@ -5,7 +5,7 @@
       <div class="logo-container">
         <img class="logo-img" src="./../assets/imgs/Herz_Logo_negativ.png">
       
-        <p class="font logo-caption">DIREKT ZU DIR</p>
+        <p class="font logo-caption" style="font-family: Futura;">DIREKT ZU DIR</p>
       </div>
 
       <div class="btn-container">
@@ -57,12 +57,12 @@ export default {
   }
   .btn {
     background-color: #FFFFFF !important;
-    width: 32vh;
+    width: 38vh;
     height: 8vh;
     margin: auto auto !important;
-    padding: 2.5vh 0 !important;
-    font-size: 1.2rem;
-    border-radius: 0px !important;
+    padding: 2.5vh 0.2vh !important;
+    font-size: 1.2em;
+    border-radius: 1px !important;
     z-index: 2 !important;
 
     color: #5f6daf;
@@ -82,5 +82,6 @@ export default {
   .logo-caption {
     display: block;
     margin-top: -8vh;
+    z-index: 3 !important;
   }
 </style>

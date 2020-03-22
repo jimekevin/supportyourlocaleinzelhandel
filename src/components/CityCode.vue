@@ -11,7 +11,7 @@
       <div class="btn-container">
         <!-- Button: Allow Location -->
         <div>
-          <v-ons-input class="font input" placeholder="Input your name" float v-model="name"></v-ons-input>
+          <v-ons-input class="font input" placeholder="Postleitzahl bitte eingeben" float v-model="plzString"></v-ons-input>
         </div>
 
         <!-- Text: oder
@@ -35,7 +35,7 @@ export default {
   name: "CityCode",
   data() {
     return {
-      name: '',
+      plzString: '',
     };
   }
 };
