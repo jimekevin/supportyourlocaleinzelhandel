@@ -1,4 +1,4 @@
-// import {App} from './app'
-// import 'firebase/firestore'
+import {App} from './app'
+import 'firebase/database'
 
-// export default App.firestore();
+export default App.database();

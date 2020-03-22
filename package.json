@@ -9,10 +9,12 @@
   },
   "dependencies": {
     "@pderas/vue2-geocoder": "^1.1.0",
+    "@types/leaflet": "^1.5.12",
     "core-js": "^3.6.4",
     "es6-promise": "^4.2.8",
     "es7-object-polyfill": "^1.0.1",
-    "firebase": "^7.11.0",
+    "file-loader": "^6.0.0",
+    "firebase": "^7.12.0",
     "leaflet": "^1.6.0",
     "onsenui": "^2.10.10",
     "vue": "^2.6.11",
@@ -27,10 +29,11 @@
     "@vue/cli-plugin-eslint": "~4.2.0",
     "@vue/cli-service": "~4.2.0",
     "babel-eslint": "^10.0.3",
+    "clean-webpack-plugin": "^3.0.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.1.2",
-    "vue-template-compiler": "^2.6.11",
-    "webpack-bundle-analyzer": "^3.6.1"
+    "html-webpack-plugin": "^3.2.0",
+    "vue-template-compiler": "^2.6.11"
   },
   "eslintConfig": {
     "root": true,

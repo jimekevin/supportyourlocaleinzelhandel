@@ -1,0 +1,130 @@
+{
+  "locations": [
+      {
+          "name" : "SHABBY DIELE SCANDI LIVING",
+          "description" : "Wein, Whisky, Gin, Rum und Craft Beer. Soli Gutscheine gegen die Corona Krise Soli Gutscheine gegen die Corona Krise",
+          "email":"info@die-genussverstaerker.de",
+          "website":"example.org",
+          "facebook":"facebook.com",
+          "instagram":"instagram.com",
+          "phone": "000000000",
+          "image" : "cafe.jpg",
+          "street": "Musterstraße 24",
+          "city" : "Frankfurt",
+          "categories" : ["kleidung"],
+          "geolocation": {"lat":"40.409264", "lng":"49.867092"}
+      },
+      {
+          "name" : "Die Genussverstärker",
+          "email":"info@die-genussverstaerker.de",
+          "description" : "Wein, Whisky, Gin, Rum und Craft Beer. Soli Gutscheine gegen die Corona Krise",
+          "image" : "bar.jpg",
+          "street": "Bernardtstraße 63a",
+          "city" : "Offenbach",
+          "categories" : ["alkohol","shop","getränke"],
+          "geolocation": {"lat":"40.409264", "lng":"49.867092"}
+      },
+      {
+          "name" : "Essensplatz 3",
+          "email" : "test@example.org",
+          "description" : "Wein, Whisky, Gin, Rum und Craft Beer. Soli Gutscheine gegen die Corona Krise",
+          "image" : "cloth.jpg",
+          "street": "Musterstraße 24",
+          "city" : "Frankfurt",
+          "categories" : ["restaurant","cafe"],
+          "geolocation": {"lat":"40.409264", "lng":"49.867092"}
+      },
+      {
+          "name" : "Essensplatz 4",
+          "email" : "test@example.org",
+          "description" : "Examplerestaurant",
+          "image" : "bar.jpg",
+          "street": "Musterstraße 24",
+          "city" : "Frankfurt",
+          "categories" : ["restaurant","cafe"],
+          "geolocation": {"lat":"40.409264", "lng":"49.867092"}
+      },
+      {
+          "name" : "Essensplatz 5",
+          "email" : "test@example.org",
+          "description" : "Examplerestaurant",
+          "image" : "bar.jpg",
+          "street": "Musterstraße 24",
+          "city" : "Frankfurt",
+          "categories" : ["restaurant","cafe"],
+          "geolocation": {"lat":"40.409264", "lng":"49.867092"}
+      },
+      {
+          "name" : "Essensplatz 6",
+          "email" : "test@example.org",
+          "description" : "Examplerestaurant",
+          "image" : "bar.jpg",
+          "street": "Musterstraße 24",
+          "city" : "Frankfurt",
+          "categories" : ["restaurant","cafe"],
+          "geolocation": {"lat":"40.409264", "lng":"49.867092"}
+      },
+      {
+          "name" : "Essensplatz 7",
+          "email" : "test@example.org",
+          "description" : "Examplerestaurant",
+          "image" : "bar.jpg",
+          "street": "Musterstraße 24",
+          "city" : "Frankfurt",
+          "categories" : ["restaurant","cafe"],
+          "geolocation": {"lat":"40.409264", "lng":"49.867092"}
+      }
+  ],
+  "categories": [
+      {
+          "name" : "restaurant",
+          "description": "Restaurants",
+          "icon" : "icons8-natural-food-64.png"
+      },
+      {
+          "name" : "shop",
+          "description": "Einzelhandel",
+          "icon" : "icons8-favorite-cart-64.png"
+      },
+      {
+          "name" : "event",
+          "description": "Theater&Events",
+          "icon" : "icons8-crowd-64.png"
+      },
+      {
+          "name" : "bar",
+          "description": "Bars",
+          "icon" : "icons8-cocktail-64.png"
+      },
+      {
+          "name" : "cafe",
+          "description": "Cafés",
+          "icon" : "icons8-cafe-64.png"
+      },
+      {
+          "name" : "creative",
+          "description": "Kreativschaffende",
+          "icon" : "icons8-paint-palette-64.png"
+      },
+      {
+          "name" : "buch",
+          "description": "Bücher",
+          "icon" : "icons8-book-64.png"
+      }
+  ],
+  "contacts": [
+    {
+      "name": "",
+      "website": "",
+      "email": "",
+      "phone": "",
+      "facebook": "",
+      "instagram": "",
+      "description": "",
+      "street": "",
+      "city": "",
+      "categories": "",
+      "image": ""
+    }
+  ]
+}
