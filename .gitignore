@@ -9,6 +9,7 @@
 # production
 /build
 /dist
+/src/dist
 
 # local scripts
 /local

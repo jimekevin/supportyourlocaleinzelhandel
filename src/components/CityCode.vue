@@ -11,30 +11,32 @@
       <div class="btn-container">
         <!-- Button: Allow Location -->
         <div>
-          <router-link to="explore"><v-ons-button class="font btn" >STANDORT FREIGEBEN</v-ons-button></router-link>
+          <v-ons-input class="font input" placeholder="Input your name" float v-model="name"></v-ons-input>
         </div>
 
-        <!-- Text: oder -->
+        <!-- Text: oder
         <div class="font">
           oder
-        </div>
+        </div>-->
           
         <!-- Button: PLZ input -->
-        <div>
+       <!-- <div>
           <router-link to="citycode"><v-ons-button class="font btn" >POSTLEITZAHL EINGEBEN</v-ons-button></router-link>
-        </div>
+        </div> -->
       </div>
     </div>
   </v-ons-page>
 </template>
 
 <script>
-//<v-ons-input placeholder="Input your name" float v-model="name"></v-ons-input>
+
 
 export default {
-  name: "Landing",
+  name: "CityCode",
   data() {
-    return {};
+    return {
+      name: '',
+    };
   }
 };
 </script>
@@ -54,9 +56,10 @@ export default {
   }
   .btn-container {
     margin-top: 15vh;
-  }
-  .btn {
+  } 
+  .input {
     background-color: #FFFFFF !important;
+    color: #000000;
     width: 32vh;
     height: 8vh;
     margin: auto auto !important;

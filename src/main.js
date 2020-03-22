@@ -13,6 +13,8 @@ import 'onsenui/css/onsenui.css';
 import 'onsenui/css/onsen-css-components.css';
 import VueOnsen from 'vue-onsenui';
 
+Vue.prototype.window = window;
+
 L.Icon.Default.mergeOptions({
   iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
   iconUrl: require('leaflet/dist/images/marker-icon.png'),
