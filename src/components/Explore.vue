@@ -62,7 +62,7 @@ export default {
   width: 100%;
   font-size: 1.5em;
   text-align: center;
-  background-color: rgba(95, 108, 175, 0.7);
+  background: linear-gradient(rgba(95, 108, 175, 1), rgba(95, 108, 175, 0.9),  rgba(95, 108, 175, 0.9), rgba(95, 108, 175, 0))
 }
 
 .store-img {
