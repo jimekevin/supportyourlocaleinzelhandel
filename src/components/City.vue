@@ -1,20 +1,25 @@
 <template>
-  <div class="map">
-    <l-map
-      style="height: 100%; width: 100%"
-      :zoom="zoom"
-      :center="center"
-      @update:zoom="zoomUpdated"
-      @update:center="centerUpdated"
-      @update:bounds="boundsUpdated"
-    >
-      <l-tile-layer :url="url"></l-tile-layer>
-      <l-marker @click="goToProfile(location.id)" v-for="location in locations" :key="location.name" :lat-lng="location.geolocation">
-        <!--<l-popup>
-          <LocationContent :data="location" />
-        </l-popup>-->
-      </l-marker>
-    </l-map>
+  <div>
+    <div class="right">
+      <router-link to="/explore"><v-ons-button style="background-color:#FFFFFF; color:#5F6DAF" icon="fa-close"></v-ons-button></router-link>
+    </div>
+    <div class="map">
+      <l-map
+        style="height: 100%; width: 100%"
+        :zoom="zoom"
+        :center="center"
+        @update:zoom="zoomUpdated"
+        @update:center="centerUpdated"
+        @update:bounds="boundsUpdated"
+      >
+        <l-tile-layer :url="url"></l-tile-layer>
+        <l-marker @click="goToProfile(location.id)" v-for="location in locations" :key="location.name" :lat-lng="location.geolocation">
+          <!--<l-popup>
+            <LocationContent :data="location" />
+          </l-popup>-->
+        </l-marker>
+      </l-map>
+    </div>
   </div>
 </template>
 
