@@ -17,8 +17,8 @@
         <img class="store-img" src="./../assets/background/Prüssig_koell.jpg">
       
         <div class="title">
-          <p>Prüssing und Köll</p>
-          <p>Heinrichstraße 5</p>
+          <p class="name-text">Prüssing und Köll</p>
+          <p class="address-text">Heinrichstraße 5</p>
         </div>S
 
         
@@ -58,11 +58,17 @@ export default {
 .title {
   position: absolute;
   margin: auto;
+  top: -20px;
   color: white;
   width: 100%;
+  height: 22%;
   font-size: 1.5em;
   text-align: center;
-  background: linear-gradient(rgba(95, 108, 175, 1), rgba(95, 108, 175, 0.9),  rgba(95, 108, 175, 0.9), rgba(95, 108, 175, 0))
+  background: linear-gradient(rgba(95, 108, 175, 1), rgba(95, 108, 175, 1),  rgba(95, 108, 175, 0.8), rgba(95, 108, 175, 0))
+}
+
+.title p {
+  padding-top: 0;
 }
 
 .store-img {
@@ -140,5 +146,14 @@ ons-toolbar {
   color: white;
   text-shadow: 2px  2px 0 #000;
 }
+
+.address-text {
+  padding-top: 0;
+}
+
+.name-text {
+  padding-top: 0;
+}
+
 
 </style>
