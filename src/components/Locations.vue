@@ -1,11 +1,12 @@
 <template>
   <div v-if="locationsLength>0">
-    <transition-group name="list" tag="div" class="locations">
-      <div v-for="location in locations" :key="location.name" class="location-item">
+    
+      <v-ons-carousel fullscreen swipeable auto-scroll overscrollable>
+      <v-ons-carousel-item v-for="location in locations" :key="location.name" class="location-item">
         <Location :data="location" />
-      </div>
-    </transition-group>
-  </div>
+      </v-ons-carousel-item>
+      </v-ons-carousel>
+    </div>
   <div v-else>
     <p class="noresult">Keine Suchergebnisse gefunden.</p>
   </div>
@@ -47,6 +48,7 @@ export default {
 @media screen and (max-width: 600px) {
   .locations {
     /* grid-template-columns: 1fr; */
+    height: 100%;
   }
 }
 
@@ -83,4 +85,8 @@ export default {
     position: absolute;
     max-width: 80vw;
   }
+
+.location-item {
+  height: 100%;
+}
 </style>

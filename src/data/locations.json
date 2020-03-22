@@ -1,34 +1,5 @@
 [
     {
-        "name" : "",
-        "description" : "",
-        "email":"",
-        "website":"",
-        "facebook":"",
-        "instagram":"",
-        "phone": "",
-        "image" : "",
-        "street": "",
-        "city" : "",
-        "categories" : ["kleidung"],
-        "geolocation": {"lat":"", "lng":""}
-    },
-    {
-        "name" : "Buchhandlung Ravensbuch",
-        "description" : "",
-        "personal_message": "Wir liefern weiterhin aus! Portofrei und schnell! Bestellungen nehmen wir telefonisch, online und über whatsapp entgegen", 
-        "email":"",
-        "website":"www.ravensbuch.de",
-        "facebook":"https://www.facebook.com/Mein.RavensBuch/",
-        "instagram":"https://www.instagram.com/ravensbuch",
-        "phone": "0178 9056085",
-        "image" : "",
-        "street": "",
-        "city" : "Ravensburg",
-        "categories" : ["kleidung"],
-        "geolocation": {"lat":"", "lng":""}
-    },
-    {
         "name" : "Musikhaus Lange",
         "description" : "Das Musikhaus Lange ist ein traditionelles Fachgeschäft für Musikinstrumente in Ravensburg. Wir bieten eine große Auswahl an Instrumenten",
         "personal_message" : "Wir liefern und reparieren weiterhin für sie!",
@@ -42,6 +13,21 @@
         "city" : "Ravensburg",
         "categories" : ["musik"],
         "geolocation": {"lat":"47.780990", "lng":"9.615290"}
+    },
+    {
+        "name" : "Buchhandlung Ravensbuch",
+        "description" : "",
+        "personal_message": "Wir liefern weiterhin aus! Portofrei und schnell! Bestellungen nehmen wir telefonisch, online und über whatsapp entgegen", 
+        "email":"",
+        "website":"www.ravensbuch.de",
+        "facebook":"https://www.facebook.com/Mein.RavensBuch/",
+        "instagram":"https://www.instagram.com/ravensbuch",
+        "phone": "0178 9056085",
+        "image" : "musik-lange.jpg",
+        "street": "",
+        "city" : "Ravensburg",
+        "categories" : ["kleidung"],
+        "geolocation": {"lat":"", "lng":""}
     },
     {
         "name" : "Buchhandlung Anna Rahm",
@@ -144,5 +130,5 @@
         "city" : "Hamburg",
         "categories" : ["kleidung"],
         "geolocation": {"lat":"53.582638", "lng":"10.017671"}
-    },
+    }
 ]

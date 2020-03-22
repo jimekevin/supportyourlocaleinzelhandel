@@ -10,21 +10,15 @@
         <v-ons-icon class="settings" size="30px" icon="fa-cog"></v-ons-icon>
       </div>
     </v-ons-toolbar>
-    <div >
-  </div>
-    <div class="content" v-if="true">
-      <div class="center">
-        <img class="store-img" src="./../assets/background/Prüssig_koell.jpg">
-      
-        <div class="title">
-          <p class="name-text">Prüssing und Köll</p>
-          <p class="address-text">Heinrichstraße 5</p>
-        </div>S
-
-        
-      </div>
+    <div v-if="locationsLength>0">
+    
+      <v-ons-carousel fullscreen swipeable auto-scroll overscrollable>
+        <v-ons-carousel-item v-for="location in locations" :key="location.name" class="location-item">
+          <Location :data="location" />
+        </v-ons-carousel-item>
+      </v-ons-carousel>
     </div>
-    <div v-else>
+  <div v-else>
     <p class="noresult">Keine Suchergebnisse gefunden.</p>
   </div>
   <div class="bottom-toolbar">
@@ -42,15 +36,21 @@
 
 
 <script>
+const Location = () => import('./Location.vue')
 
 export default {
   name: "Explore",
-  data() {
-    return {
-      name: '',
-    };
+  components: {
+    Location
   },
-
+  computed: {
+    locations() {
+      return this.$store.getters.getFilteredLocations
+    },
+    locationsLength() {
+      return this.$store.getters.getFilteredLocations.length
+    }
+  }
 };
 
 </script>
@@ -108,6 +108,9 @@ ons-toolbar {
   height: 18%;
 }
 
+.content {
+}
+
 .bg-image {
 
   /* Add the blur effect */
@@ -162,5 +165,8 @@ ons-toolbar {
   padding-top: 0;
 }
 
+.on-swipe {
+  height: 95vh !important;
+}
 
 </style>

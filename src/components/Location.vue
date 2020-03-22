@@ -1,5 +1,5 @@
 <template>
-  <div class="location" :style="{ 'background-image': 'url(./../assets/cats/' + data.image + ')' }">
+  <div class="location">
     <LocationContent :data="data"/>
   </div>
 </template>
@@ -45,16 +45,5 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .location {
-  background-size: cover;
-  transition: all 1s;
-  position: relative;
-  transition: all 0.3s ease-in;
-  transform: scale(1);
-  outline: none;
-  height: 100%;
-  box-shadow: 0 0 5px 0 rgba(80, 80, 80, 0.3);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 </style>
