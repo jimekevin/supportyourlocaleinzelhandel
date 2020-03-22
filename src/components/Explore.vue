@@ -7,7 +7,7 @@
       <div class="center">
       </div>
       <div class="right">
-        <v-ons-icon class="settings" icon="fa-cog"></v-ons-icon>
+        <v-ons-icon class="settings" size="30px" icon="fa-cog"></v-ons-icon>
       </div>
     </v-ons-toolbar>
     <div >
@@ -55,6 +55,10 @@ export default {
 
 <style scoped>
 
+p {
+  font-family: Futura;
+}
+
 .title {
   position: absolute;
   margin: auto;
@@ -85,7 +89,8 @@ export default {
 }
 
 .settings {
-  padding-right: 10px;
+  padding: 2px 10px 2px 10px;
+  color: white;
 }
 
 ons-toolbar {
