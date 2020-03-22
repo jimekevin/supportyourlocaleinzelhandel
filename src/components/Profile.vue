@@ -1,7 +1,9 @@
 <template>
 <v-ons-page id="profile">
+<v-ons-toolbar>
+  <div class="center">Produktkategorie</div>
+</v-ons-toolbar>
 
-<h1>{{profile.name}}</h1>
 <!--<v-ons-card>
   <div class="title">Lore ipsum</div>
   <div class="content">
@@ -31,7 +33,7 @@
     <v-ons-row class="desc">{{profile.street}}<br>{{profile.city}}</v-ons-row>
     <div class="spacer"></div>
     <v-ons-row class="field">Kontakt</v-ons-row>
-    <v-ons-row class="desc">0178/12341234<br>waw-bäcker.de<br>mail@bäcker.de</v-ons-row>
+    <v-ons-row class="desc">{{profile.phone}}<br>{{profile.email}}<br>{{profile.website}}</v-ons-row>
   </v-ons-col>
   <v-ons-col class="right">
     <v-ons-row class="field">Angebot</v-ons-row>
@@ -58,6 +60,8 @@
   </div>
 </v-ons-row>
 
+<div class="down-spacer"></div>
+
 </v-ons-page>
 </template>
 
@@ -67,7 +71,7 @@ export default {
   computed: {
     profile: {
       get() {
-        let id = 1;
+        let id = this.$route.params.id;
         let locations = this.$store.getters.getFilteredLocations;
         return locations[id];
       },
@@ -89,8 +93,10 @@ export default {
 </script>
 
 <style type="text/css" scoped>
-h1 {
-  font-family: 'Futura Medium', Avenir, Helvetica, Arial, sans-serif;
+
+#title {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+
 }
 .cover-img {
   margin: 10px;
@@ -100,6 +106,11 @@ h1 {
 }
 ons-col {
   margin: 10px;
+}
+.down-spacer {
+  display: inline-block;
+  width: 100%;
+  height: 70px;
 }
 .icon-row  {
   width: 100%;
@@ -118,6 +129,9 @@ ons-col {
   color: #5f6daf;
   margin-bottom: 5px;
 }
+.info .left,
+.info .right {
+}
 .info .desc {
   font-size: 18px;
 }
@@ -130,11 +144,11 @@ ons-col {
   color: #5f6daf;
   font-size: 18px;
 }
-.info .right {
-  margin-left: 40px;
+.info .left {
+  margin-right: 40px;
 }
 .info .right {
-  flex-basis: 40%;
+  flex-basis: 10%;
 }
 .outline {
   background: white;
