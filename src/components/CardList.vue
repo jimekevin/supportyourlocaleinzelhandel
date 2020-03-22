@@ -1,37 +1,56 @@
 <template>
-  <div class="content">
-    <header>
-      <div>
-        <h1>
-          <router-link to="/">Support your local Einzelhandel</router-link>
-        </h1>
-        <Search />
-        <Categories v-on:category-locations="filterLocationsByCategory" />
-      </div>
-      <div>
-        <p>
-          Schön, dass du hier bist! Du führst ein Restaurant oder einen Shop und bietest aktuell Gutscheine an, nimmst Bestellungen entgegen, oder lieferst Waren aus? Das finden wir ziemlich großartig. Wenn du hier mit deinem Angebot gelistet werden möchtest, schreib uns einfach eine
-          <a href="mailto:mail@johannesklinger.com">Mail</a> mit Infos und Links zu deinem Angebot, oder füll unser
-          <router-link to="contact">Formular</router-link> aus. Das ganze kostet dich nichts und bringt uns keine Kohle. So machen wir uns gemeinsam die schlechte Zeit zusammen ein bisschen besser. Wir freuen uns!
-        </p>
-      </div>
-    </header>
-    <transition name="fade">
-      <router-view></router-view>
-    </transition>
-  </div>
+  <v-ons-page class="content">
+      <div class="background" style="height:100vh;width: 80%;background-color:#338811;"></div>
+      <section class="">
+        <div>
+          <h1>
+            <router-link to="/">Support your local Einzelhandel</router-link>
+          </h1>
+          <!-- <Search /> -->
+          <!-- <Categories v-on:category-locations="filterLocationsByCategory" /> -->
+        </div>
+        <div>
+          <p>
+            Schön, dass du hier bist!
+            <router-link to="contact">Formular</router-link>
+          </p>
+        </div>
+      </section>
+
+      <v-ons-toolbar>
+        <div class="center">Text input</div>
+      </v-ons-toolbar>
+
+      <v-ons-list>
+        <v-ons-list-item>
+          <div class="center">
+            <v-ons-input placeholder="Input your name" float
+              v-model="name"
+            >
+            </v-ons-input>
+          </div>
+        </v-ons-list-item>
+        <v-ons-list-item>
+          <div><ons-button class="shuffle" onclick="shuffle_play()"><ons-icon style="margin-right: 5px;" icon="fa-play"></ons-icon> SHUFFLE PLAY!</ons-button></div>
+        </v-ons-list-item>
+      </v-ons-list>
+  
+      <transition name="fade">
+        <router-view></router-view>
+      </transition>
+  </v-ons-page>
 </template>
 
 <script>
-const Categories =()=> import('./Categories.vue')
-const Search =()=> import('./Search.vue')
+//const Categories =()=> import('./Categories.vue')
+//const Search =()=> import('./Search.vue')
 
 
 export default {
-  name: "LocalSupport",
+  name: "CardList",
   components: {
-    Categories,
-    Search
+    //Categories,
+    //Search
   },
   props: {
     msg: String
