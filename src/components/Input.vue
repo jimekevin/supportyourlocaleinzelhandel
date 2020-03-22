@@ -41,7 +41,7 @@ Vue.use(Geocoder, {
   defaultLanguage: "DE", // e.g. 'en'
   defaultMode: "address", // or 'lat-lng'
   //Google Maps Key for Geoencoding
-  googleMapsApiKey: ""
+  googleMapsApiKey: "AIzaSyCO3WF1qJX2j0iYqZ5KnkiyvBJmA-fhiQQ"
 });
 
 export default {

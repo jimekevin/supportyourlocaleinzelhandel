@@ -10,5 +10,8 @@
       "**/node_modules/**",
       ".env.development.local"
     ]
+  },
+  "storage": {
+    "rules": "storage.rules"
   }
 }

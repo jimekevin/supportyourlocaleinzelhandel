@@ -7,6 +7,7 @@ const Explore =()=> import("./../components/Explore.vue")
 const Filter =()=> import("./../components/Filter.vue")
 const City =()=> import("./../components/City.vue")
 const Profile =()=> import("./../components/Profile.vue")
+const Input =()=> import("./../components/Input.vue")
 const routes = [
   { path: '/', name:'landing', component: Landing },
   { path: '/citycode', name:'citycode', component: CityCode },
@@ -14,6 +15,7 @@ const routes = [
   { path: '/filter', name:'filter', component: Filter },
   { path: '/city', name:'city', component: City },
   { path: '/profile/:id', name:'profile', component: Profile },
+  { path: '/input', name:'input', component: Input },
 ]
 
 const router = new VueRouter({
