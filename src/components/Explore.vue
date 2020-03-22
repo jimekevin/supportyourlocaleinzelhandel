@@ -12,47 +12,49 @@
         </div>
       </v-ons-toolbar>
     </router-link>
-    <div >
-  </div>
+    <div v-if="locationsLength>0">
+      <v-ons-carousel fullscreen swipeable auto-scroll overscrollable>
+        <v-ons-carousel-item v-for="location in locations" :key="location.name" class="location-item">
+          <Location :data="location" />
+        </v-ons-carousel-item>
+      </v-ons-carousel>
+    </div>
     <div class="content" v-if="true">
-      <div class="center">
-        <img class="store-img" src="./../assets/background/Prüssig_koell.jpg">
-      
-        <div class="title">
-          <p class="name-text">Prüssing und Köll</p>
-          <p class="address-text">Heinrichstraße 5</p>
-        </div>S
-
-        
-      </div>
+        <!-- <img class="store-img" src="./../assets/background/Prüssig_koell.jpg"> -->
     </div>
     <div v-else>
-    <p class="noresult">Keine Suchergebnisse gefunden.</p>
-  </div>
-  <div class="bottom-toolbar">
-    <v-ons-icon class="left-arrow" size="45px" icon="fa-chevron-left"></v-ons-icon>
-    <v-ons-icon class="right-arrow" size="45px" icon="fa-chevron-right"></v-ons-icon>
-    <router-link to="profile/3">
-      <v-ons-icon class="up-arrow" size="45px" icon="fa-chevron-up"></v-ons-icon>
-    </router-link>
-    <div class="txt-swipe-up">
-      <p>KAUFEN? SWIPE UP</p>
+      <p class="noresult">Keine Suchergebnisse gefunden.</p>
     </div>
-  </div>
+    <div class="bottom-toolbar">
+      <v-ons-icon class="left-arrow" size="45px" icon="fa-chevron-left"></v-ons-icon>
+      <v-ons-icon class="right-arrow" size="45px" icon="fa-chevron-right"></v-ons-icon>
+      <router-link to="profile/3">
+        <v-ons-icon class="up-arrow" size="45px" icon="fa-chevron-up"></v-ons-icon>
+      </router-link>
+      <div class="txt-swipe-up">
+        <p>KAUFEN? SWIPE UP</p>
+      </div>
+    </div>
   </v-ons-page>
 </template>
 
 
 <script>
+const Location = () => import('./Location.vue')
 
 export default {
   name: "Explore",
-  data() {
-    return {
-      name: '',
-    };
+  components: {
+    Location
   },
-
+  computed: {
+    locations() {
+      return this.$store.getters.getFilteredLocations
+    },
+    locationsLength() {
+      return this.$store.getters.getFilteredLocations.length
+    }
+  }
 };
 
 </script>
@@ -110,6 +112,9 @@ ons-toolbar {
   height: 18%;
 }
 
+.content {
+}
+
 .bg-image {
 
   /* Add the blur effect */
@@ -164,5 +169,8 @@ ons-toolbar {
   padding-top: 0;
 }
 
+.on-swipe {
+  height: 95vh !important;
+}
 
 </style>
