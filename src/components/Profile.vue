@@ -11,13 +11,13 @@
 
 <v-ons-row>
   <v-ons-col>
-    <v-ons-button modifier="large outline">Lieferung</v-ons-button>
+    <div class="tag">Lieferung</div>
   </v-ons-col>
   <v-ons-col>
-    <v-ons-button modifier="large outline">Bezahlung</v-ons-button>
+    <div class="tag">Bezahlung</div>
   </v-ons-col>
   <v-ons-col>
-    <v-ons-button modifier="large outline">Social</v-ons-button>
+    <div class="tag">Social</div>
   </v-ons-col>
 </v-ons-row>
 
@@ -89,7 +89,8 @@ export default {
 </script>
 
 <style type="text/css" scoped>
-#profile {
+h1 {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
 }
 .cover-img {
   margin: 10px;
@@ -141,6 +142,14 @@ ons-col {
 }
 .ons-fab.outline {
   border: 2px solid black;
+}
+.tag {
+  margin: 5px;
+  padding: 5px;
+  border-radius: 15px;
+  border: 1px solid #af5f94;
+  color: #af5f94;
+  text-align: center;
 }
 </style>
 

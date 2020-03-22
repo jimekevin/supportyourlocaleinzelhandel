@@ -37,9 +37,20 @@ body {
   padding: 0;
 }
 
+@font-face {
+  font-family: Futura;
+  src: url('/assets/fonts/futura/Futura Light font.ttf');
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+#app .page {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+}
+#app .page__background {
+  background: white;
 }
 </style>
