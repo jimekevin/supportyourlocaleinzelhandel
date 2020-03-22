@@ -90,7 +90,7 @@ export default {
 
 <style type="text/css" scoped>
 h1 {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Futura Medium', Avenir, Helvetica, Arial, sans-serif;
 }
 .cover-img {
   margin: 10px;

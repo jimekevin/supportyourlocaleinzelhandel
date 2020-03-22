@@ -14,14 +14,11 @@
           <v-ons-input class="font input" placeholder="Postleitzahl bitte eingeben" float v-model="plzString"></v-ons-input>
         </div>
 
-        <!-- Text: oder
-        <div class="font">
-          oder
-        </div>-->
+        
           
-        <!-- Button: PLZ input -->
+        <!-- Button: PLZ send -->
        <!-- <div>
-          <router-link to="citycode"><v-ons-button class="font btn" >POSTLEITZAHL EINGEBEN</v-ons-button></router-link>
+          <router-link to="explore"><v-ons-button class="font btn" ><v-ons-icon></v-ons-icon></v-ons-button></router-link>
         </div> -->
       </div>
     </div>
@@ -54,6 +51,7 @@ export default {
     font-style: italic;
     color: #FFFFFF;
   }
+  
   .btn-container {
     margin-top: 15vh;
   } 
@@ -61,14 +59,19 @@ export default {
     background-color: #FFFFFF !important;
     color: #000000;
     width: 32vh;
-    height: 8vh;
+    height: auto;
     margin: auto auto !important;
-    padding: 2.5vh 0 !important;
-    font-size: 1.2rem;
-    border-radius: 0px !important;
+    padding: 2vh !important;
+    font-size: 2rem !important;
+    border-radius: 1px !important;
     z-index: 2 !important;
-
-    color: #5f6daf;
+  }
+  v-ons-input+input {
+    color: #000000;
+    font-size: 5rem !important;
+  }
+  .input::-ms-input-placeholder, .input::-moz-placeholder, .input::-webkit-input-placeholder, .input::placeholder {
+    color: peachpuff;
   }
   .logo-container {
     display: inline-block;

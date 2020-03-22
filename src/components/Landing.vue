@@ -5,7 +5,7 @@
       <div class="logo-container">
         <img class="logo-img" src="./../assets/imgs/Herz_Logo_negativ.png">
       
-        <p class="font logo-caption" style="font-family: Futura;">DIREKT ZU DIR</p>
+        <p class="font logo-caption">DIREKT ZU DIR</p>
       </div>
 
       <div class="btn-container">
@@ -15,7 +15,7 @@
         </div>
 
         <!-- Text: oder -->
-        <div class="font">
+        <div class="font v-space">
           oder
         </div>
           
@@ -47,6 +47,7 @@ export default {
     background: #5f6daf !important;
   }
   .font {
+    font-family: 'Futura Medium';
     font-size: 2rem;
     font-weight: bold;
     font-style: italic;
@@ -83,5 +84,8 @@ export default {
     display: block;
     margin-top: -8vh;
     z-index: 3 !important;
+  }
+  .v-space {
+    margin: 1vh 0;
   }
 </style>

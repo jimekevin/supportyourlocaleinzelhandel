@@ -38,20 +38,28 @@ body {
 }
 
 @font-face {
-  font-family: 'Futura';
-  src: url('./assets/fonts/futura/Futura Light font.ttf') format('ttf');
+font-family: 'Futura Medium';
+font-style: normal;
+font-weight: normal;
+src: local('Futura Medium'), url('./assets/fonts/futura/futuram.woff') format('woff');
+}
+@font-face {
+font-family: 'Futura Medium Italic';
+font-style: normal;
+font-weight: normal;
+src: local('Futura Medium Italic'), url('./assets/fonts/futura/futurami.woff') format('woff');
 }
 @font-face {
 font-family: 'Futura Light';
 font-style: normal;
 font-weight: normal;
-src: local('Futura Std Light'), url('./assets/fonts/futura/FuturaStd-Light.woff') format('woff');
+src: local('Futura Light'), url('./assets/fonts/futura/futural.woff') format('woff');
 }
 @font-face {
-font-family: 'Futura Light Oblique';
+font-family: 'Futura Light Italic';
 font-style: normal;
 font-weight: normal;
-src: local('Futura Std Light Oblique'), url('./assets/fonts/futura/Futura Std Light Oblique.woff') format('woff');
+src: local('Futura Light Italic'), url('./assets/fonts/futura/futurali.woff') format('woff');
 }
 
 #app {
