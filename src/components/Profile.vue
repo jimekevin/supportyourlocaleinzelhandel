@@ -1,7 +1,7 @@
 <template>
 <v-ons-page id="profile">
 
-<h1>Julius Brantner Brothandwerk</h1>
+<h1>{{profile.name}}</h1>
 <!--<v-ons-card>
   <div class="title">Lore ipsum</div>
   <div class="content">
@@ -28,33 +28,33 @@
 <v-ons-row class="info">
   <v-ons-col class="left">
     <v-ons-row class="field">Adresse</v-ons-row>
-    <v-ons-row class="desc">Bahnhofstraße 5<br>80222 München</v-ons-row>
+    <v-ons-row class="desc">{{profile.street}}<br>{{profile.city}}</v-ons-row>
     <div class="spacer"></div>
     <v-ons-row class="field">Kontakt</v-ons-row>
     <v-ons-row class="desc">0178/12341234<br>waw-bäcker.de<br>mail@bäcker.de</v-ons-row>
   </v-ons-col>
   <v-ons-col class="right">
     <v-ons-row class="field">Angebot</v-ons-row>
-    <v-ons-row class="desc">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam diam diam diam diam diam diam diam voluptua.</v-ons-row>
+    <v-ons-row class="desc">{{profile.description}}</v-ons-row>
     <div class="spacer"></div>
-    <v-ons-row class="updated">Aktualisiert am 23.02</v-ons-row>
+    <v-ons-row class="updated">Aktualisiert am 22.03.2020</v-ons-row>
   </v-ons-col>
 </v-ons-row>
 
 <v-ons-row class="icon-row">
   <div class="wrapper">
-  <v-ons-fab ripple position="bottom">
-    <v-ons-icon icon="fa-phone"></v-ons-icon>
-  </v-ons-fab>
-  <v-ons-fab ripple position="bottom">
-    <v-ons-icon icon="fa-envelope"></v-ons-icon>
-  </v-ons-fab>
-  <v-ons-fab ripple position="bottom">
-    <v-ons-icon icon="fa-whatsapp"></v-ons-icon>
-  </v-ons-fab>
-  <v-ons-fab ripple position="bottom">
-    <v-ons-icon icon="fa-comment-dots"></v-ons-icon>
-  </v-ons-fab>
+    <v-ons-fab v-if="profile.phone != ''" class="outline" @click="window.open('tel:'+profile.phone)" ripple position="bottom" href="google.de">
+      <v-ons-icon class="outline" icon="fa-phone"></v-ons-icon>
+    </v-ons-fab>
+    <v-ons-fab v-if="profile.email != ''" class="outline" @click="window.open('mailto:'+profile.email)" ripple position="bottom">
+      <v-ons-icon class="outline" icon="fa-envelope"></v-ons-icon>
+    </v-ons-fab>
+    <v-ons-fab v-if="profile.whatsapp != ''" class="outline" @click="window.open('https://api.whatsapp.com/send?phone='+profile.phone.replace(' ',''))" ripple position="bottom">
+      <v-ons-icon class="outline" icon="fa-whatsapp"></v-ons-icon>
+    </v-ons-fab>
+    <v-ons-fab v-if="profile.instagram != ''" class="outline" @click="window.open('https://instagram.com/'+profile.instagram.replace('@',''))" ripple position="bottom">
+      <v-ons-icon icon="fa-instagram"></v-ons-icon>
+    </v-ons-fab>
   </div>
 </v-ons-row>
 
@@ -64,9 +64,20 @@
 <script>
 export default {
   name: "Profile",
+  computed: {
+    profile: {
+      get() {
+        let id = 1;
+        let locations = this.$store.getters.getFilteredLocations;
+        return locations[id];
+      },
+      set(newVal) {
+        this.value = newVal;
+      }
+    }
+  },
   data() {
     return {
-      profile: {}
     };
   },
   methods: {
@@ -123,6 +134,13 @@ ons-col {
 }
 .info .right {
   flex-basis: 40%;
+}
+.outline {
+  background: white;
+  color: black;
+}
+.ons-fab.outline {
+  border: 2px solid black;
 }
 </style>
 
