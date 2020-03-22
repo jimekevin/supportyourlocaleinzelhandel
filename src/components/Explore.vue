@@ -1,15 +1,17 @@
 <template>
   <v-ons-page>
-    <v-ons-toolbar>
-      <div class="left">
-        <img class="heart-icon" src="./../assets/icons/Icon_Herz_weiß-13.png" alt="heart icon">
-      </div>
-      <div class="center">
-      </div>
-      <div class="right">
-        <v-ons-icon class="settings" size="30px" icon="fa-cog"></v-ons-icon>
-      </div>
-    </v-ons-toolbar>
+    <router-link to="city">
+      <v-ons-toolbar>
+        <div class="left">
+          <img class="heart-icon" src="./../assets/icons/Icon_Herz_weiß-13.png" alt="heart icon">
+        </div>
+        <div class="center">
+        </div>
+        <div class="right">
+          <v-ons-icon class="settings" size="30px" icon="fa-cog"></v-ons-icon>
+        </div>
+      </v-ons-toolbar>
+    </router-link>
     <div >
   </div>
     <div class="content" v-if="true">
@@ -30,7 +32,7 @@
   <div class="bottom-toolbar">
     <v-ons-icon class="left-arrow" size="45px" icon="fa-chevron-left"></v-ons-icon>
     <v-ons-icon class="right-arrow" size="45px" icon="fa-chevron-right"></v-ons-icon>
-    <router-link to="profile">
+    <router-link to="profile/3">
       <v-ons-icon class="up-arrow" size="45px" icon="fa-chevron-up"></v-ons-icon>
     </router-link>
     <div class="txt-swipe-up">

@@ -3,7 +3,7 @@
 <v-ons-toolbar>
   <div class="center">Produktkategorie</div>
   <div class="right">
-    <router-link to="/city"><v-ons-toolbar-button icon="fa-close"></v-ons-toolbar-button></router-link>
+    <router-link to="/city"><v-ons-toolbar-button style="color:#5F6DAF" icon="fa-close"></v-ons-toolbar-button></router-link>
   </div>
 </v-ons-toolbar>
 

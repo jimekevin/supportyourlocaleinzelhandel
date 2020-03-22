@@ -10,8 +10,9 @@
 
       <div class="btn-container">
         <!-- Button: Allow Location -->
-        <div>
+        <div style="display: inline-block;">
           <v-ons-input class="font input" placeholder="Postleitzahl bitte eingeben" float v-model="plzString"></v-ons-input>
+          <router-link to="explore" style="text-decoration:none;"><ons-icon class="btn-continue" icon="fa-play"></ons-icon></router-link>
         </div>
 
         
@@ -61,14 +62,20 @@ export default {
     width: 32vh;
     height: auto;
     margin: auto auto !important;
-    padding: 2vh !important;
+    padding: 1.5vh !important;
     font-size: 2rem !important;
     border-radius: 1px !important;
     z-index: 2 !important;
   }
   v-ons-input+input {
     color: #000000;
-    font-size: 5rem !important;
+    font-size: 2rem !important;
+  }
+  .btn-continue {
+    transform: scale(2.5) !important; 
+    display: block !important;
+    color:#FFFFFF !important;
+    margin: 2rem auto;
   }
   .input::-ms-input-placeholder, .input::-moz-placeholder, .input::-webkit-input-placeholder, .input::placeholder {
     color: peachpuff;
