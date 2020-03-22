@@ -1,19 +1,32 @@
 <template>
   <div class="location">
-    <div class="address">
-      <img src="./../assets/imgs/musik-lange.jpg">
-      <span>{{data.name}}</span>
-      <span>{{data.street}}</span>
+    <h2>{{data.name}}</h2>
+    <p>
+      <span>{{data.street}}</span><br>
       <span>{{data.city}}</span>
+    </p>
+    <p>{{data.description}}</p>
+   <content>
+    <div class="wrapper">
+      <nav>
+        <a
+          rel="noopener nofollow noreferrer"
+          target="_blank"
+          v-if="data.website"
+          :href="data.website"
+          :title="'Website: '+data.name"
+        ><v-ons-icon icon="fa-browser"></v-ons-icon></a>
+        <a rel="noopener nofollow noreferrer" v-if="data.email" title="Email schreiben" :href="'mailto:'+data.email"><v-ons-icon icon="fa-envelope"></v-ons-icon></a>
+        <a rel="noopener nofollow noreferrer" v-if="data.phone" title="Anrufen" :href="'tel:'+data.phone"><v-ons-icon icon="fa-phone"></v-ons-icon></a>
+        <a rel="noopener nofollow noreferrer" target="_blank" title="facebook" v-if="data.facebook" :href="data.facebook"><v-ons-icon icon="fa-facebook"></v-ons-icon></a>
+        <a rel="noopener nofollow noreferrer" target="_blank" title="Instagram" v-if="data.instagram" :href="data.instagram"><v-ons-icon icon="fa-instagram"></v-ons-icon></a>
+      </nav>
     </div>
-    <content :style="{ 'background-image': 'url('+selectedImage+')', 'background-position':horizontalPosition+'% '+verticalPosition+'%'}">
-      <p>{{data.description}}</p>
-    </content>
-  </div>
+  </content>
+    </div>
 </template>
 
 <script>
-
 export default {
   name: "LocationContent",
   props: {
@@ -21,34 +34,62 @@ export default {
   },
   data() {
    return {
-     backgroundImages: [
-      // './../assets/background/blob-shape_one.svg',
-      // './../assets/background/blob-shape_two.svg',
-      // './../assets/background/blob-shape_three.svg',
-      // './../assets/background/blob-shape_four.svg',
-      // './../assets/background/blob-shape_five.svg',
-      // './../assets/background/blob-shape_six.svg',
-      // './../assets/background/blob-shape_seven.svg',
-      // './../assets/background/blob-shape_eight.svg',
-      //'./../assets/background/blob-shape_nine.svg'
-    ],
     selectedImage: '',
     verticalPosition: '',
     horizontalPosition: '',
    } 
   },
   created () {
-    const idx = Math.floor(Math.random() * this.backgroundImages.length);
-    this.selectedImage = this.backgroundImages[idx]
-    this.verticalPosition = Math.floor(Math.random() * (60 - 30 + 1)) + 30
-    this.horizontalPosition = Math.round(Math.random() * 100)
   }
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  .location {
-    height: 100%;
-  }
+
+ons-page {
+  height: 300px;
+  width: 300px;
+  left: -150px;
+  top: -300px;
+  border-radius: 5px;
+}
+
+content {
+  background-color: white;
+  display: inline-block;
+  width: 100%;
+  flex: 1;
+  text-align: left;
+  color: rgba(80, 80, 80, 1);
+  font-size: 13px;
+  line-height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-repeat: no-repeat;
+  position: relative;
+}
+.wrapper {
+  margin: 20px;
+}
+
+/*content::after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  background: white;
+  position: absolute;
+  left:0;
+  top: 0;
+  opacity: 0.93;
+}*/
+
+
+content p {
+  flex-grow: 1;
+}
+
+
 </style>

@@ -9,9 +9,10 @@
       @update:bounds="boundsUpdated"
     >
       <l-tile-layer :url="url"></l-tile-layer>
-      <l-marker v-for="location in locations" :key="location.name" :lat-lng="location.geolocation">
-        <l-popup>
-        </l-popup>
+      <l-marker @click="goToProfile(location.id)" v-for="location in locations" :key="location.name" :lat-lng="location.geolocation">
+        <!--<l-popup>
+          <LocationContent :data="location" />
+        </l-popup>-->
       </l-marker>
     </l-map>
   </div>
@@ -19,13 +20,17 @@
 
 <script>
 
-import { LMap, LTileLayer, LPopup} from "vue2-leaflet";
+//const LocationContent = () => import("./LocationContent.vue");
+
+//import { LMap, LTileLayer, LPopup } from "vue2-leaflet";
+import { LMap, LTileLayer } from "vue2-leaflet";
 export default {
   name: "Map",
   components: {
     LMap,
     LTileLayer,
-    LPopup,
+    //LPopup,
+    //LocationContent,
   },
   computed: {
     filter() {
@@ -52,6 +57,9 @@ export default {
     };
   },
   methods: {
+    goToProfile(id) {
+      this.$router.push({ path: 'profile/' + id });
+    },
     zoomUpdated(zoom) {
       this.zoom = zoom;
     },
