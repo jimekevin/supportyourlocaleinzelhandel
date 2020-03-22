@@ -1,15 +1,17 @@
 
 import VueRouter from 'vue-router'
 
-const Contact =()=> import("./../components/Contact.vue")
-const Locations =()=> import("./../components/Locations.vue")
-const Map =()=> import("./../components/Map.vue")
-const Input =()=> import("./../components/Input.vue")
+const Landing =()=> import("./../components/Landing.vue")
+const Filter =()=> import("./../components/Filter.vue")
+const Explore =()=> import("./../components/Explore.vue")
+const City =()=> import("./../components/City.vue")
+const Profile =()=> import("./../components/Profile.vue")
 const routes = [
-  { path: '/', name:'home', component: Locations },
-  { path: '/contact', name:'contact', component: Contact },
-  { path: '/karte', name:'map', component: Map },
-  { path: '/input', name:'input', component: Input },
+  { path: '/', name:'landing', component: Landing },
+  { path: '/explore', name:'explore', component: Explore },
+  { path: '/filter', name:'filter', component: Filter },
+  { path: '/city', name:'city', component: City },
+  { path: '/profile', name:'profile', component: Profile },
 ]
 
 const router = new VueRouter({
