@@ -13,7 +13,7 @@ const routes = [
   { path: '/explore', name:'explore', component: Explore },
   { path: '/filter', name:'filter', component: Filter },
   { path: '/city', name:'city', component: City },
-  { path: '/profile', name:'profile', component: Profile },
+  { path: '/profile/:id', name:'profile', component: Profile },
 ]
 
 const router = new VueRouter({

@@ -60,6 +60,8 @@
   </div>
 </v-ons-row>
 
+<div class="down-spacer"></div>
+
 </v-ons-page>
 </template>
 
@@ -69,7 +71,7 @@ export default {
   computed: {
     profile: {
       get() {
-        let id = 2;
+        let id = this.$route.params.id;
         let locations = this.$store.getters.getFilteredLocations;
         return locations[id];
       },
@@ -102,6 +104,11 @@ export default {
 }
 ons-col {
   margin: 10px;
+}
+.down-spacer {
+  display: inline-block;
+  width: 100%;
+  height: 70px;
 }
 .icon-row  {
   width: 100%;
