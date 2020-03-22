@@ -30,7 +30,9 @@
   <div class="bottom-toolbar">
     <v-ons-icon class="left-arrow" size="45px" icon="fa-chevron-left"></v-ons-icon>
     <v-ons-icon class="right-arrow" size="45px" icon="fa-chevron-right"></v-ons-icon>
-    <v-ons-icon class="up-arrow" size="45px" icon="fa-chevron-up"></v-ons-icon>
+    <router-link to="profile">
+      <v-ons-icon class="up-arrow" size="45px" icon="fa-chevron-up"></v-ons-icon>
+    </router-link>
     <div class="txt-swipe-up">
       <p>KAUFEN? SWIPE UP</p>
     </div>
