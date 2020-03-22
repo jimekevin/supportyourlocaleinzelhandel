@@ -33,7 +33,7 @@
     <v-ons-row class="desc">{{profile.street}}<br>{{profile.city}}</v-ons-row>
     <div class="spacer"></div>
     <v-ons-row class="field">Kontakt</v-ons-row>
-    <v-ons-row class="desc">0178/12341234<br>waw-bäcker.de<br>mail@bäcker.de</v-ons-row>
+    <v-ons-row class="desc">{{profile.phone}}<br>{{profile.email}}<br>{{profile.website}}</v-ons-row>
   </v-ons-col>
   <v-ons-col class="right">
     <v-ons-row class="field">Angebot</v-ons-row>
@@ -69,7 +69,7 @@ export default {
   computed: {
     profile: {
       get() {
-        let id = 1;
+        let id = 2;
         let locations = this.$store.getters.getFilteredLocations;
         return locations[id];
       },
@@ -120,6 +120,9 @@ ons-col {
   color: #5f6daf;
   margin-bottom: 5px;
 }
+.info .left,
+.info .right {
+}
 .info .desc {
   font-size: 18px;
 }
@@ -132,11 +135,11 @@ ons-col {
   color: #5f6daf;
   font-size: 18px;
 }
-.info .right {
-  margin-left: 40px;
+.info .left {
+  margin-right: 40px;
 }
 .info .right {
-  flex-basis: 40%;
+  flex-basis: 10%;
 }
 .outline {
   background: white;
