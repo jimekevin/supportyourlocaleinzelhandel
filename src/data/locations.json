@@ -144,5 +144,5 @@
         "city" : "Hamburg",
         "categories" : ["kleidung"],
         "geolocation": {"lat":"53.582638", "lng":"10.017671"}
-    },
+    }
 ]

@@ -1,7 +1,9 @@
 <template>
 <v-ons-page id="profile">
+<v-ons-toolbar>
+  <div class="center">Produktkategorie</div>
+</v-ons-toolbar>
 
-<h1>{{profile.name}}</h1>
 <!--<v-ons-card>
   <div class="title">Lore ipsum</div>
   <div class="content">
@@ -89,7 +91,7 @@ export default {
 </script>
 
 <style type="text/css" scoped>
-h1 {
+#title {
   font-family: Avenir, Helvetica, Arial, sans-serif;
 }
 .cover-img {
