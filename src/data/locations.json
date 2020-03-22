@@ -1,5 +1,21 @@
 [
     {
+        "id": 3,
+        "name" : "Musikhaus Lange",
+        "description" : "Das Musikhaus Lange ist ein traditionelles Fachgeschäft für Musikinstrumente in Ravensburg. Wir bieten eine große Auswahl an Instrumenten",
+        "personal_message" : "Wir liefern und reparieren weiterhin für sie!",
+        "email":"info@muskhaus-lange.de",
+        "website":"https://www.musikhaus-lange.de/",
+        "facebook":"https://www.facebook.com/musikhaus.lange.1",
+        "instagram":"https://www.instagram.com/musikhauslange",
+        "phone": "0751 359000",
+        "image" : "musik-lange.jpg",
+        "street": "Marktstraße 27",
+        "city" : "Ravensburg",
+        "categories" : ["musik"],
+        "geolocation": {"lat":"47.780990", "lng":"9.615290"}
+    },
+    {
         "id": 1,
         "name" : "",
         "description" : "",
@@ -29,22 +45,6 @@
         "city" : "Ravensburg",
         "categories" : ["kleidung"],
         "geolocation": {"lat":"", "lng":""}
-    },
-    {
-        "id": 3,
-        "name" : "Musikhaus Lange",
-        "description" : "Das Musikhaus Lange ist ein traditionelles Fachgeschäft für Musikinstrumente in Ravensburg. Wir bieten eine große Auswahl an Instrumenten",
-        "personal_message" : "Wir liefern und reparieren weiterhin für sie!",
-        "email":"info@muskhaus-lange.de",
-        "website":"https://www.musikhaus-lange.de/",
-        "facebook":"https://www.facebook.com/musikhaus.lange.1",
-        "instagram":"https://www.instagram.com/musikhauslange",
-        "phone": "0751 359000",
-        "image" : "musik-lange.jpg",
-        "street": "Marktstraße 27",
-        "city" : "Ravensburg",
-        "categories" : ["musik"],
-        "geolocation": {"lat":"47.780990", "lng":"9.615290"}
     },
     {
         "id": 4,

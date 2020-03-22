@@ -88,5 +88,6 @@ export default {
 
 .location-item {
   height: 100%;
+  background: rgba(95, 108, 175, 1);
 }
 </style>

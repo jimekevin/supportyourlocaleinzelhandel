@@ -1,40 +1,26 @@
 <template>
-  <v-ons-page>
-    <router-link to="city">
-      <v-ons-toolbar>
-        <div class="left">
-          <img class="heart-icon" src="./../assets/icons/Icon_Herz_weiß-13.png" alt="heart icon">
-        </div>
-        <div class="center">
-        </div>
-        <div class="right">
-          <v-ons-icon class="settings" size="30px" icon="fa-cog"></v-ons-icon>
-        </div>
-      </v-ons-toolbar>
-    </router-link>
+  <v-ons-page class="explore-page">
+    <v-ons-toolbar>
+      <div class="left">
+        <img class="heart-icon" src="./../assets/icons/Icon_Herz_weiß-13.png" alt="heart icon">
+      </div>
+      <div class="center">
+      </div>
+      <div class="right">
+        <v-ons-icon class="settings" size="30px" icon="fa-cog"></v-ons-icon>
+      </div>
+    </v-ons-toolbar>
     <div v-if="locationsLength>0">
+    
       <v-ons-carousel fullscreen swipeable auto-scroll overscrollable>
         <v-ons-carousel-item v-for="location in locations" :key="location.name" class="location-item">
           <Location :data="location" />
         </v-ons-carousel-item>
       </v-ons-carousel>
     </div>
-    <div class="content" v-if="true">
-        <!-- <img class="store-img" src="./../assets/background/Prüssig_koell.jpg"> -->
-    </div>
-    <div v-else>
-      <p class="noresult">Keine Suchergebnisse gefunden.</p>
-    </div>
-    <div class="bottom-toolbar">
-      <v-ons-icon class="left-arrow" size="45px" icon="fa-chevron-left"></v-ons-icon>
-      <v-ons-icon class="right-arrow" size="45px" icon="fa-chevron-right"></v-ons-icon>
-      <router-link to="profile/3">
-        <v-ons-icon class="up-arrow" size="45px" icon="fa-chevron-up"></v-ons-icon>
-      </router-link>
-      <div class="txt-swipe-up">
-        <p>KAUFEN? SWIPE UP</p>
-      </div>
-    </div>
+  <div v-else>
+    <p class="noresult">Keine Suchergebnisse gefunden.</p>
+  </div>
   </v-ons-page>
 </template>
 
@@ -129,36 +115,6 @@ ons-toolbar {
   top: 0;
   left: -20px;
   z-index: 10;
-}
-
-.left-arrow {
-  position: absolute;
-  left: 10vh;
-  top: 9vh;
-  color: white;
-}
-
-.right-arrow {
-  position: absolute;
-  left: 33vh;
-  top: 9vh;
-  color: white;
-}
-
-.up-arrow {
-  position: absolute;
-  left: 21vh;
-  color: white;
-}
-
-.txt-swipe-up {
-  position: absolute;
-  left: 17.8vh;
-  top: 7vh;
-  width: 100px;
-  text-align: center;
-  color: white;
-  text-shadow: 2px  2px 0 #000;
 }
 
 .address-text {
