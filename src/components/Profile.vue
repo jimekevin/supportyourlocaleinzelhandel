@@ -22,7 +22,7 @@
 </v-ons-row>
 
 <v-ons-row>
-  <img class="cover-img" src="@/assets/laden.png">
+  <img class="cover-img" src="./../assets/imgs/laden.png">
 </v-ons-row>
 
 <v-ons-row class="info">
