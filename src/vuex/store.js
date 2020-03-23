@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import db from "./../firebase/db.js"
 import LocationData from "./../data/locations.json"
+import StoryData from "./../data/stories.json"
 
 Vue.use(Vuex)
 
@@ -12,17 +13,18 @@ export default new Vuex.Store({
       search: ''
     },
     // Should be empty if data is not retrieved locally
-    locations: LocationData
+    locations: LocationData,
+    stories: StoryData,
   },
   actions: {
     // Gets location from firebase and adds them to the vuex store, currently not necessary because of flatfile
     fetchLocations({ commit }) {
-      db.collection("locations").orderBy("name").get().then(function (querySnapshot) {
+      db.collection("locations").orderBy("id").get().then(function (querySnapshot) {
         querySnapshot.forEach(function (doc) {
           commit("addLocation", doc.data())
         });
       });
-    }
+    },
   },
   mutations: {
     addCategoryFilter(state, category) {

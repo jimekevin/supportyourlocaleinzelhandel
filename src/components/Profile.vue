@@ -1,9 +1,9 @@
 <template>
 <v-ons-page id="profile">
 <v-ons-toolbar>
-  <div class="center">Produktkategorie</div>
+  <div class="center">{{profile.name}}</div>
   <div class="right">
-    <router-link to="/city"><v-ons-toolbar-button style="color:#5F6DAF" icon="fa-close"></v-ons-toolbar-button></router-link>
+    <router-link to="/explore"><v-ons-toolbar-button style="color:#5F6DAF" icon="fa-close"></v-ons-toolbar-button></router-link>
   </div>
 </v-ons-toolbar>
 

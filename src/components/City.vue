@@ -82,8 +82,7 @@ export default {
       center: [47.780990, 9.615290],
       bounds: null,
       iconSize: 30,
-      dialogFilter: true,
-      locationsLoaded: false,
+      dialogFilter: false,
       locations: false,
       filters: [
         { name: "Sport",    tag: "sport",    state: true },

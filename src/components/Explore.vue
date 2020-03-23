@@ -2,51 +2,147 @@
   <v-ons-page class="explore-page">
     <v-ons-toolbar>
       <div class="left">
-        <img class="heart-icon" src="./../assets/icons/Icon_Herz_weiß-13.png" alt="heart icon">
+        <router-link to="/city">
+          <v-ons-toolbar-button icon="fa-map"></v-ons-toolbar-button>
+        </router-link>
       </div>
-      <div class="center">
-      </div>
+      <div class="center">Entdecken</div>
       <div class="right">
-        <v-ons-icon class="settings" size="30px" icon="fa-cog"></v-ons-icon>
+        <v-ons-toolbar-button icon="fa-cog"></v-ons-toolbar-button>
       </div>
     </v-ons-toolbar>
-    <div v-if="locationsLength>0">
-    
-      <v-ons-carousel fullscreen auto-refresh swipeable overscrollable auto-scroll auto-scroll-ratio="0.25">
-        <v-ons-carousel-item v-for="location in locations" :key="location.name" class="location-item">
-          <Location :data="location" />
-        </v-ons-carousel-item>
-      </v-ons-carousel>
+
+    <v-ons-gesture-detector>
+    <div id="swipe-area" class="content-wrapper" v-if="locations.length>0">
+        <!--<v-ons-carousel fullscreen auto-refresh swipeable overscrollable auto-scroll auto-scroll-ratio="0.25">
+          <v-ons-carousel-item v-for="location in locations" :key="location.name" class="location-item">-->
+        <v-ons-carousel auto-scroll-ratio="0.05" fullscreen swipeable auto-scroll overscrollable :index.sync="carouselIndex" >
+          <v-ons-carousel-item v-for="story in stories" :key="story.location_id">
+            <!--<img class="cover-img" :src="'./../assets/'+story.media[0].url">-->
+            <img class="story" src="./../assets/imgs/test_carousel/laden1.jpg">
+          </v-ons-carousel-item>
+        </v-ons-carousel>
+        <!--<img class="story" src="./../assets/imgs/test_carousel/laden1.jpg">-->
+        
+        <div class="swipe-instructions">
+          <v-ons-button class="left-button" @click="decreaseCarouselIndex()" modifier="quiet" icon="fa-chevron-left"></v-ons-button>
+          <router-link to="/profile/2">
+            <v-ons-button class="center-button" modifier="quiet" icon="fa-chevron-up"></v-ons-button>
+          </router-link>
+          <v-ons-button class="right-button" @click="increaseCarouselIndex()" modifier="quiet" icon="fa-chevron-right"></v-ons-button>
+          <p class="desc">Swipe</p>
+        </div>
     </div>
-  <div v-else>
-    <p class="noresult">Keine Suchergebnisse gefunden.</p>
-  </div>
+    <div class="no-result-wrapper" v-else>
+      <p>Keine Suchergebnisse gefunden.</p>
+    </div>
+    </v-ons-gesture-detector>
   </v-ons-page>
 </template>
 
 
 <script>
-const Location = () => import('./Location.vue')
+//const Location = () => import('./Location.vue')
 
 export default {
   name: "Explore",
   components: {
-    Location
+    //Location
+  },
+  created() {
+    console.log(this.stories);
+
+    let gd = this.$ons.GestureDetector(document.querySelector('#swipe-area'));
+    gd.on('swipe click dragup dragdown', function() {
+      console.log('drag Y axis');
+    });
+
+    document.addEventListener('swipe', function(event) {
+        console.log('Swipe left is detected.');
+      if (event.target.matches('#swipe-area')) {
+        console.log('Swipe left is detected.');
+      }
+    });
   },
   computed: {
     locations() {
       return this.$store.getters.getFilteredLocations
     },
-    locationsLength() {
-      return this.$store.getters.getFilteredLocations.length
+    stories() {
+      return this.$store.state.stories;
+    },
+  },
+  methods: {
+    decreaseCarouselIndex() {
+      this.carouselIndex = Math.max(0, this.carouselIndex - 1);
+    },
+    increaseCarouselIndex() {
+      this.carouselIndex = Math.min(this.carouselIndex + 1, this.stories.length);
+    },
+  },
+  data() {
+    return {
+      carouselIndex: 0,
     }
-  }
+  },
 };
 
 </script>
 
 <style scoped>
+.no-result-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100% - 44px);
+  width: 100%;
+}
+.no-result {
+  padding: 5px;
+}
 
+.content-wrapper {
+  height: 100%;
+}
+
+.swipe-instructions {
+  position: fixed;
+  z-index: 1;
+  bottom: 64px;
+  width: 100%;
+}
+.swipe-instructions ons-button,
+.swipe-instructions .desc {
+  color: white !important;
+  font-size: 40px;
+  position: absolute;
+  text-shadow: 0px 0px 5px rgba(0,0,0,0.5);
+}
+
+.swipe-instructions .left-button {
+  left: 20px;
+}
+.swipe-instructions .center-button {
+  left: calc(50% - 30px);
+  bottom: 30px;
+  width: 60px;
+}
+.swipe-instructions .right-button {
+  right: 20px;
+}
+.swipe-instructions .desc {
+  left: calc(50% - 50px);
+  bottom: -28px;
+  width: 100px;
+  height: 40px;
+  margin: 0px;
+  padding: 0px;
+}
+img.story {
+  height: 100%;
+}
+
+/*
 p {
   font-family: Futura;
 }
@@ -103,14 +199,11 @@ ons-toolbar {
 
 .bg-image {
 
-  /* Add the blur effect */
   filter: blur(8px);
   -webkit-filter: blur(8px);
 
-  /* Full height */
   width: 108%;
 
-  /* Center and scale the image nicely */
   position: absolute;
   top: 0;
   left: -20px;
@@ -127,6 +220,6 @@ ons-toolbar {
 
 .on-swipe {
   height: 95vh !important;
-}
+}*/
 
 </style>

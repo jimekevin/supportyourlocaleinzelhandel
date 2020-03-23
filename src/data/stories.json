@@ -1,0 +1,20 @@
+[
+  {
+    "location_id": 1,
+    "media": [
+      { "url": "test_carousel/laden1.jpg" }
+    ]
+  },
+  {
+    "location_id": 2,
+    "media": [
+      { "url": "test_carousel/laden2.jpg" }
+    ]
+  },
+  {
+    "location_id": 3,
+    "media": [
+      { "url": "test_carousel/laden3.jpg" }
+    ]
+  }
+]

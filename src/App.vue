@@ -17,13 +17,19 @@ export default {
       name: '',
     };
   },
+  created() {
+    console.log(this.stories);
+  },
   computed: {
     filter() {
       return this.$store.state.filter;
     },
     locations() {
       return this.$store.getters.getFilteredLocations;
-    }
+    },
+    stories() {
+      return this.$store.state.stories;
+    },
   },
 };
 </script>
