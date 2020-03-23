@@ -1,21 +1,5 @@
 [
     {
-        "id": 3,
-        "name" : "Musikhaus Lange",
-        "description" : "Das Musikhaus Lange ist ein traditionelles Fachgeschäft für Musikinstrumente in Ravensburg. Wir bieten eine große Auswahl an Instrumenten",
-        "personal_message" : "Wir liefern und reparieren weiterhin für sie!",
-        "email":"info@muskhaus-lange.de",
-        "website":"https://www.musikhaus-lange.de/",
-        "facebook":"https://www.facebook.com/musikhaus.lange.1",
-        "instagram":"https://www.instagram.com/musikhauslange",
-        "phone": "0751 359000",
-        "image" : "musik-lange.jpg",
-        "street": "Marktstraße 27",
-        "city" : "Ravensburg",
-        "categories" : ["musik"],
-        "geolocation": {"lat":"47.780990", "lng":"9.615290"}
-    },
-    {
         "id": 1,
         "name" : "",
         "description" : "",
@@ -28,6 +12,7 @@
         "street": "",
         "city" : "",
         "categories" : ["kleidung"],
+        "category_tags": ["kinder"],
         "geolocation": {"lat":"", "lng":""}
     },
     {
@@ -43,8 +28,26 @@
         "image" : "",
         "street": "",
         "city" : "Ravensburg",
+        "category_tags": ["kinder"],
         "categories" : ["kleidung"],
         "geolocation": {"lat":"", "lng":""}
+    },
+    {
+        "id": 3,
+        "name" : "Musikhaus Lange",
+        "description" : "Das Musikhaus Lange ist ein traditionelles Fachgeschäft für Musikinstrumente in Ravensburg. Wir bieten eine große Auswahl an Instrumenten",
+        "personal_message" : "Wir liefern und reparieren weiterhin für sie!",
+        "email":"info@muskhaus-lange.de",
+        "website":"https://www.musikhaus-lange.de/",
+        "facebook":"https://www.facebook.com/musikhaus.lange.1",
+        "instagram":"https://www.instagram.com/musikhauslange",
+        "phone": "0751 359000",
+        "image" : "musik-lange.jpg",
+        "street": "Marktstraße 27",
+        "city" : "Ravensburg",
+        "categories" : ["musik"],
+        "category_tags": ["deko"],
+        "geolocation": {"lat":"47.780990", "lng":"9.615290"}
     },
     {
         "id": 4,
@@ -59,6 +62,7 @@
         "street": "Marktstraße 43",
         "city" : "Ravensburg",
         "categories" : ["bücher"],
+        "category_tags": ["kinder"],
         "geolocation": {"lat":"47.780550", "lng":"9.615590"}
     },
     {
@@ -74,6 +78,7 @@
         "street": "Marktstraße 20",
         "city" : "Ravensburg",
         "categories" : ["kleidung"],
+        "category_tags": ["kinder"],
         "geolocation": {"lat":"47.780590", "lng":"9.615300"}
     },
     {
@@ -89,6 +94,7 @@
         "street": "Marktstraße 10",
         "city" : "Ravensburg",
         "categories" : ["kleidung"],
+        "category_tags": ["kinder"],
         "geolocation": {"lat":"47.781070", "lng":"9.615000"}
     },
     {
@@ -105,6 +111,7 @@
         "street": "Marktstraße 23",
         "city" : "Ravensburg",
         "categories" : ["buch"],
+        "category_tags": ["kinder"],
         "geolocation": {"lat":"47.781139", "lng":"9.615179"}
     },
     {
@@ -120,6 +127,7 @@
         "street": "Kirchstraße 2-6",
         "city" : "Ravensburg",
         "categories" : ["kleidung"],
+        "category_tags": ["kinder"],
         "geolocation": {"lat":"47.782290", "lng":"9.614103"}
     },
     {
@@ -137,6 +145,7 @@
         "street": "Fürther Str. 50",
         "city" : "Nürnberg",
         "categories" : ["geschenke"],
+        "category_tags": ["kinder"],
         "geolocation": {"lat":"49.450927", "lng":"11.056462"}
     },
 	{
@@ -153,6 +162,7 @@
         "street": "Gertigstraße 58",
         "city" : "Hamburg",
         "categories" : ["kleidung"],
+        "category_tags": ["kinder"],
         "geolocation": {"lat":"53.582638", "lng":"10.017671"}
     },
     {
@@ -169,6 +179,7 @@
         "street": "Oeder Weg 77",
         "city" : "Frankfurt am Main",
         "categories" : ["Blumengeschäft"],
+        "category_tags": ["kinder"],
         "geolocation": {"lat":"50.123277", "lng":"8.681111"}
     },	
 	{
@@ -186,6 +197,7 @@
         "street": "Eckenheimer Landstraße 74",
         "city" : "Frankfurt am Main",
         "categories" : ["Blumengeschäft"],
+        "category_tags": ["kinder"],
         "geolocation": {"lat":"50.124275", "lng":"8.686577"}
     },	
 	{
@@ -202,6 +214,7 @@
         "street": "Oeder Weg 59",
         "city" : "Frankfurt am Main",
         "categories" : ["Möbelgeschäft"],
+        "category_tags": ["kinder"],
         "geolocation": {"lat":"50.122204", "lng":"8.680452"}
     },	
 	{
@@ -219,6 +232,7 @@
         "street": "Oeder Weg 57",
         "city" : "Frankfurt am Main",
         "categories" : ["Brauereischänke"],
+        "category_tags": ["kinder"],
         "geolocation": {"lat":"50.121875", "lng":"8.680366"}
     },	
 	{
@@ -235,6 +249,7 @@
         "street": "Bahnhofstr. 2",
         "city" : "Ochtrup",
         "categories" : ["Bekleidungsgeschäft"],
+        "category_tags": ["kinder"],
         "geolocation": {"lat":"52.207942", "lng":"7.188512"}
     },	
 	{
@@ -251,6 +266,7 @@
         "street": "Weserstr. 21",
         "city" : "Rinteln",
         "categories" : ["Schuhgeschäft"],
+        "category_tags": ["kinder"],
         "geolocation": {"lat":"52.187995", "lng":"9.080451"}
     },	
 	{
@@ -267,6 +283,7 @@
         "street": "Fuggerstr. 4",
         "city" : "Schwabmünchen",
         "categories" : ["Juweliergeschäft"],
+        "category_tags": ["kinder"],
         "geolocation": {"lat":"48.179574", "lng":"10.758272"}
     },	
 	{
@@ -283,6 +300,7 @@
         "street": "Marktplatz 17",
         "city" : "Günzburg",
         "categories" : ["Bekleidungsgeschäft"],
+        "category_tags": ["kinder"],
         "geolocation": {"lat":"48.455158", "lng":"10.276753"}
     },	
 	{
@@ -299,6 +317,7 @@
         "street": "Krämerbrücke 24",
         "city" : "Erfurt",
         "categories" : ["Haushaltswarengeschäft"],
+        "category_tags": ["kinder"],
         "geolocation": {"lat":"50.978730", "lng":"11.031071"}
     },	
 	{
@@ -315,6 +334,7 @@
         "street": "Domplatz 25",
         "city" : "Erfurt",
         "categories" : ["Fachhandel für Kirchenbedarf"],
+        "category_tags": ["kinder"],
         "geolocation": {"lat":"50.976552", "lng":"11.025352"}
     },	
 	{
@@ -331,6 +351,7 @@
         "street": "Paulstraße 23",
         "city" : "Erfurt",
         "categories" : ["Geschenkladen"],
+        "category_tags": ["kinder"],
         "geolocation": {"lat":"50.976049", "lng":"11.027373"}
     },	
 	{
@@ -347,6 +368,7 @@
         "street": "Ritterstraße 9-13",
         "city" : "Leipzig",
         "categories" : ["Taschengeschäft"],
+        "category_tags": ["kinder"],
         "geolocation": {"lat":"51.341163", "lng":"12.379351"}
     },	
 	{
@@ -363,6 +385,7 @@
         "street": "Stockenstrasse 10",
         "city" : "Bonn",
         "categories" : ["Fotofachgeschäft"],
+        "category_tags": ["kinder"],
         "geolocation": {"lat":"50.734537", "lng":"7.103369"}
     },	
 	{
@@ -379,6 +402,7 @@
         "street": "Sternstraße 58",
         "city" : "Bonn",
         "categories" : ["Geschenkladen"],
+        "category_tags": ["kinder"],
         "geolocation": {"lat":"50.735784", "lng":"7.099055"}
     }
 ]

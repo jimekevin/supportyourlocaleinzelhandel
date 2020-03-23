@@ -13,37 +13,18 @@
     <v-ons-dialog cancelable :visible.sync="dialogFilter">
       <div id="filter-buttons">
         <div class="wrapper">
-          <v-ons-row class="center">
-            <v-ons-col>
-              <v-ons-button modifier="outline">Sport</v-ons-button>
-            </v-ons-col>
-            <v-ons-col>
-              <v-ons-button modifier="outline">Deko</v-ons-button>
-            </v-ons-col>
-          </v-ons-row>
-          <v-ons-row class="center">
-            <v-ons-col>
-              <v-ons-button modifier="outline">Kinder</v-ons-button>
-            </v-ons-col>
-            <v-ons-col>
-              <v-ons-button modifier="outline">Kleidung</v-ons-button>
-            </v-ons-col>
-          </v-ons-row>
-          <v-ons-row class="center">
-            <v-ons-col>
-              <v-ons-button modifier="outline">Spiele</v-ons-button>
-            </v-ons-col>
-            <v-ons-col>
-              <v-ons-button modifier="outline">Gadgets</v-ons-button>
-            </v-ons-col>
-          </v-ons-row>
+          <h2>
+            Kategorien
+          </h2>
+          <div class="filter" v-for="(filter, i) in filters" :key="i">
+            <v-ons-switch v-model="filter.state"></v-ons-switch> 
+            <span class="desc">{{filter.name}}</span>
+          </div>
+          <div class="right close-button" @click="dialogFilter=false;applyFilters()">
+            <v-ons-button modifier="quiet"><v-ons-icon icon="fa-check"></v-ons-icon> Anwenden</v-ons-button>
+          </div>
         </div>
       </div>
-      <v-ons-row id="apply-filter-button-container">
-        <v-ons-button id="apply-filter-button" modifier="large">
-          <v-ons-icon icon="fa-trash"></v-ons-icon> Filter entfernen
-        </v-ons-button>
-      </v-ons-row>
     </v-ons-dialog>
     <div class="map">
       <l-map
@@ -55,7 +36,7 @@
         @update:bounds="boundsUpdated"
       >
         <l-tile-layer :url="url"></l-tile-layer>
-        <l-marker @click="goToProfile(location.id)" v-for="location in locations" :key="location.name" :lat-lng="location.geolocation">
+        <l-marker @click="goToProfile(location.id)" v-for="location in locations" :key="location.id" :lat-lng="location.geolocation">
           <!--<l-popup>
             <LocationContent :data="location" />
           </l-popup>-->
@@ -83,15 +64,15 @@ export default {
     filter() {
       return this.$store.state.filter;
     },
-    locations() {
-      return this.$store.getters.getFilteredLocations;
-    },
     dynamicSize() {
       return [this.iconSize, this.iconSize * 1.15];
     },
     dynamicAnchor() {
       return [this.iconSize / 2, this.iconSize * 1.15];
     }
+  },
+  created() {
+    this.locations = this.$store.getters.getFilteredLocations;
   },
   data() {
     return {
@@ -102,9 +83,37 @@ export default {
       bounds: null,
       iconSize: 30,
       dialogFilter: true,
+      locationsLoaded: false,
+      locations: false,
+      filters: [
+        { name: "Sport",    tag: "sport",    state: true },
+        { name: "Kinder",   tag: "kinder",   state: true },
+        { name: "Deko",     tag: "deko",     state: true },
+        { name: "Spiele",   tag: "spiele",   state: true },
+        { name: "Kleidung", tag: "kleidung", state: true },
+        { name: "Gadgets",  tag: "gadgets" , state: true },
+      ],
     };
   },
   methods: {
+    applyFilters() {
+      let newLocations = [];
+      let allLocations = this.$store.getters.getFilteredLocations;
+      for (var key1 in allLocations) {
+        let location = allLocations[key1];
+        for (var key2 in this.filters) {
+          let filter = this.filters[key2];
+          if (filter.state && location.category_tags.indexOf(filter.tag) !== -1) {
+            console.log(location.category_tags);
+            newLocations.push(location);
+            break;
+          }
+        }
+      }
+      console.log(allLocations);
+      console.log(newLocations);
+      this.locations = newLocations;
+    },
     goToProfile(id) {
       this.$router.push({ path: 'profile/' + id });
     },
@@ -139,15 +148,46 @@ export default {
 .filters .page__background {
   background-color: #5f6daf;
 }
+#filter-buttons {
+  margin: 10px;
+}
+#filter-buttons h2 {
+  margin-left: 10px;
+}
 #filter-buttons ons-col {
   margin: 10px;
 }
-#filter-buttons ons-button {
-  text-align: center;
-  margin: 10px;
-  width: 100%;
-}
 #apply-filter-button {
   margin: 10px;
+}
+
+#filter-buttons .wrapper {
+  padding: 10px;
+}
+#filter-buttons h2 {
+  margin: 0px 10px 10px 10px;
+}
+#filter-buttons .toggleButton {
+  background: red;
+}
+#filter-buttons .toggleButton.active {
+  background: green;
+}
+#filter-buttons .filter {
+  margin: 10px;
+}
+#filter-buttons .filter ons-switch {
+  margin-top: -5px;
+}
+#filter-buttons .filter .desc {
+  margin-left: 10px;
+  font-size: 18px;
+}
+.close-button {
+  text-align: right;
+}
+.close-button ons-button {
+  display: inline-block;
+  margin: auto;
 }
 </style>
