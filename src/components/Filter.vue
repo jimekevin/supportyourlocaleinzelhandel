@@ -2,6 +2,9 @@
   <v-ons-page class="filters">
     <v-ons-toolbar>
       <div class="center">Produktkategorie</div>
+      <div class="right">
+        <router-link to="/city"><v-ons-toolbar-button  icon="fa-close"></v-ons-toolbar-button></router-link>
+      </div>
     </v-ons-toolbar>
     <div id="filter-buttons">
       <div class="wrapper">

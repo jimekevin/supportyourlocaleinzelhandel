@@ -120,6 +120,7 @@ content p {
   flex-grow: 1;
 }
 
+<<<<<<< Updated upstream
 .up-arrow {
   padding: 20px;
   color: gray;
@@ -147,4 +148,33 @@ content p {
   text-align: center;
 }
 
+=======
+.center {
+  text-align: center;
+}
+.filters .page__background {
+  background-color: #5f6daf;
+}
+#filter-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+#filter-buttons ons-col {
+  margin: 10px;
+}
+#filter-buttons ons-button {
+  margin: 10px;
+  width: 100%;
+}
+#apply-filter-button-container {
+  position: absolute;
+  bottom: 20px;
+}
+#apply-filter-button {
+  margin: 10px;
+}
+>>>>>>> Stashed changes
 </style>

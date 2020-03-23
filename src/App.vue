@@ -73,4 +73,7 @@ src: local('Futura Light Italic'), url('./assets/fonts/futura/futurali.woff') fo
 #app .page__background {
   background: white;
 }
+.toolbar-button {
+  color: #5F6DAF !important;
+}
 </style>
