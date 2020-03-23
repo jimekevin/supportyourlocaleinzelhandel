@@ -18,7 +18,7 @@ export default {
     };
   },
   created() {
-    console.log(this.stories);
+    document.title = "Wir von hier";
   },
   computed: {
     filter() {

@@ -50,19 +50,6 @@ export default {
     //Location
   },
   created() {
-    console.log(this.stories);
-
-    let gd = this.$ons.GestureDetector(document.querySelector('#swipe-area'));
-    gd.on('swipe click dragup dragdown', function() {
-      console.log('drag Y axis');
-    });
-
-    document.addEventListener('swipe', function(event) {
-        console.log('Swipe left is detected.');
-      if (event.target.matches('#swipe-area')) {
-        console.log('Swipe left is detected.');
-      }
-    });
   },
   computed: {
     locations() {
