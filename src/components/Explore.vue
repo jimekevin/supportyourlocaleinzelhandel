@@ -12,7 +12,7 @@
     </v-ons-toolbar>
     <div v-if="locationsLength>0">
     
-      <v-ons-carousel fullscreen auto-refresh swipeable overscrollable auto-scroll auto-scroll-ratio="0.15">
+      <v-ons-carousel fullscreen auto-refresh swipeable overscrollable auto-scroll auto-scroll-ratio="0.25">
         <v-ons-carousel-item v-for="location in locations" :key="location.name" class="location-item">
           <Location :data="location" />
         </v-ons-carousel-item>
