@@ -19,7 +19,7 @@
         <v-ons-carousel auto-scroll-ratio="0.05" fullscreen swipeable auto-scroll overscrollable :index.sync="carouselIndex" >
           <v-ons-carousel-item v-for="story in stories" :key="story.location_id">
             <!--<img class="cover-img" :src="'./../assets/'+story.media[0].url">-->
-            <img class="story" src="./../assets/imgs/test_carousel/laden1.jpg">
+            <img class="story" v-bind:src="require('./../assets/imgs/test_carousel/laden' + story.location_id + '.jpg')">
           </v-ons-carousel-item>
         </v-ons-carousel>
         <!--<img class="story" src="./../assets/imgs/test_carousel/laden1.jpg">-->
