@@ -1,0 +1,48 @@
+# continuous-deployment.yml
+# Build and Deploy into client folder
+name: Continuous Deployment - Client
+
+# Workflow triggers on pull request targeting master branch
+on:
+  push:
+    branches:
+      - development
+
+jobs:
+  build:
+    name: Build and Deploy
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: "Checkout"
+      uses: actions/checkout@v1
+
+    - name: "Setup Node.js"
+      uses: actions/setup-node@v1
+      with: 
+        node-version: 12.x
+
+    - name: "Install dependencies"
+      run: npm install 
+      
+    - name: "Build app"
+      run: npm run build --if-present
+    
+#    - name: "Run tests"
+#      run: npm test 
+      
+    - name: "Copy files via ssh key"
+      uses: easingthemes/ssh-deploy@v2.0.9
+      with:
+        # Private Key
+        SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_PRIVATE_KEY }}
+        # Remote host
+        REMOTE_HOST: ${{ secrets.DEPLOY_HOST }}
+        # Remote user
+        REMOTE_USER: ${{ secrets.DEPLOY_USERNAME }}
+        # Remote port
+        REMOTE_PORT: ${{ secrets.DEPLOY_PORT }} 
+        # Source directory
+        SOURCE: dist/ 
+        # Target directory
+        TARGET: ${{ secrets.DEPLOY_TARGET }} 
