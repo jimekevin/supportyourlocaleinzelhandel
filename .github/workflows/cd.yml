@@ -6,7 +6,7 @@ name: Continuous Deployment - Client
 on:
   push:
     branches:
-      - development
+      - master
 
 jobs:
   build:
